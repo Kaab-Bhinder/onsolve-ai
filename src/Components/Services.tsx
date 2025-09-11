@@ -92,7 +92,7 @@ export default function Services() {
 
         {/* Call to Action Button */}
         <div className="text-center mt-20">
-          <Link href="/services">
+          <Link href="/contact#consultation-form">
             <button className="group inline-flex items-center gap-3 px-8 py-4 bg-accent text-white font-bold text-lg rounded-full hover:bg-accent/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
               Book a Consultation
               <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />

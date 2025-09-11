@@ -116,3 +116,24 @@ body {
     object-position: center 30%; /* Focus on upper area for mobile */
   }
 }
+
+/* Smooth scroll and anchor navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent flash of white content during anchor navigation */
+body {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* Ensure content is visible during navigation */
+#consultation-form {
+  scroll-margin-top: 2rem;
+}
+
+/* Prevent content jump during anchor navigation */
+.motion-safe {
+  animation-fill-mode: both;
+}

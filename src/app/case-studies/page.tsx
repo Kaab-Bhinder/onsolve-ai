@@ -4,46 +4,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { HiArrowRight, HiSparkles, HiChartBarSquare } from "react-icons/hi2";
 import { FaCheckCircle } from "react-icons/fa";
+import { timelineCaseStudies as caseStudies } from "@/assets/data";
 
-export default function CaseStudiesPage() {
-  const caseStudies = [
-    {
-      icon: "🛒",
-      title: "ShopBot AI Agent for E-Commerce",
-      challenge: "An online fashion retailer was losing customers due to slow support and abandoned carts.",
-      solution: "Built a ShopBot AI Agent for instant support, product recommendations, and checkout integration.",
-      impact: ["60% reduction in cart abandonment", "45% increase in repeat purchases", "Enhanced AI-driven personalization"]
-    },
-    {
-      icon: "🏙",
-      title: "Smart City Navigator",
-      challenge: "Municipality needed a solution to reduce traffic congestion and improve commuting.",
-      solution: "Developed Smart City Navigator with AI algorithms for real-time route suggestions and predictions.",
-      impact: ["35% reduction in congestion", "20% faster travel times", "Improved citizen satisfaction"]
-    },
-    {
-      icon: "📦",
-      title: "Warehouse Management System (Python)",
-      challenge: "Wholesale distributor faced delays and errors due to manual tracking.",
-      solution: "Built a WMS automating stock, shipment, and order processing with analytics dashboards.",
-      impact: ["70% better inventory accuracy", "40% faster order fulfillment", "60% fewer errors"]
-    },
-    {
-      icon: "🏥",
-      title: "Healthcare – Medicine Reminder & Patient Tracker",
-      challenge: "Doctors and patients needed a system to improve medication adherence.",
-      solution: "Created a Reminder & Tracker App with doctor-patient assignment and history tracking.",
-      impact: ["85% increase in adherence", "Reduced hospital re-admissions", "Stronger doctor-patient relationships"]
-    },
-    {
-      icon: "🏡",
-      title: "Real Estate Property Match Agent",
-      challenge: "Real estate company losing leads as clients struggled to find exact property matches.",
-      solution: "Developed AI Property Match Agent for instant personalized recommendations and chat support.",
-      impact: ["50% faster property matching", "30% more closed deals", "Higher satisfaction with personalization"]
-    }
-  ];
-
+const CaseStudiesPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -52,51 +15,23 @@ export default function CaseStudiesPage() {
         <div className="absolute inset-0 pointer-events-none">
           <motion.div
             className="absolute top-20 left-10 w-20 h-20 bg-white/20 rounded-full"
-            animate={{
-              y: [0, -20, 0],
-              rotate: [0, 180, 360],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            animate={{ y: [0, -20, 0], rotate: [0, 180, 360] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
             className="absolute top-40 right-20 w-16 h-16 bg-white/15 rounded-lg"
-            animate={{
-              y: [0, -30, 0],
-              rotate: [0, -180, -360],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            animate={{ y: [0, -30, 0], rotate: [0, -180, -360] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
             className="absolute bottom-20 left-1/4 w-12 h-12 bg-white/25 rounded-full"
-            animate={{
-              y: [0, -25, 0],
-              x: [0, 15, 0],
-            }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            animate={{ y: [0, -25, 0], x: [0, 15, 0] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
             className="absolute top-1/3 right-1/3 w-8 h-8 bg-white/30 rotate-45"
-            animate={{
-              rotate: [45, 225, 405],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            animate={{ rotate: [45, 225, 405], scale: [1, 1.2, 1] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           />
         </div>
 
@@ -126,7 +61,9 @@ export default function CaseStudiesPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <HiSparkles className="w-6 h-6 text-white/80" />
-              <span className="text-white/80 text-sm font-medium">Transforming businesses through innovation</span>
+              <span className="text-white/80 text-sm font-medium">
+                Transforming businesses through innovation
+              </span>
             </motion.div>
           </div>
         </div>
@@ -144,8 +81,7 @@ export default function CaseStudiesPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              Success Stories That{" "}
-              <span className="text-accent">Inspire</span>
+              Success Stories That <span className="text-accent">Inspire</span>
             </motion.h2>
             <motion.p
               className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed"
@@ -154,7 +90,9 @@ export default function CaseStudiesPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              Discover how we&apos;ve helped businesses across industries achieve remarkable results through innovative AI solutions and cutting-edge technology.
+              Discover how we&apos;ve helped businesses across industries achieve
+              remarkable results through innovative AI solutions and
+              cutting-edge technology.
             </motion.p>
           </div>
 
@@ -164,7 +102,7 @@ export default function CaseStudiesPage() {
               <motion.div
                 key={index}
                 className={`flex flex-col lg:flex-row items-start gap-8 lg:gap-16 ${
-                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -213,7 +151,10 @@ export default function CaseStudiesPage() {
                     </h4>
                     <ul className="space-y-3">
                       {study.impact.map((impactItem, impactIndex) => (
-                        <li key={impactIndex} className="flex items-start gap-3">
+                        <li
+                          key={impactIndex}
+                          className="flex items-start gap-3"
+                        >
                           <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                           <span className="text-text-secondary leading-relaxed">
                             {impactItem}
@@ -255,7 +196,10 @@ export default function CaseStudiesPage() {
             viewport={{ once: true }}
           >
             Ready to create your own success story?{" "}
-            <Link href="/contact" className="text-accent font-semibold hover:text-primary transition-colors">
+            <Link
+              href="/contact"
+              className="text-accent font-semibold hover:text-primary transition-colors"
+            >
               Get in touch
             </Link>{" "}
             to discuss your project.
@@ -264,4 +208,6 @@ export default function CaseStudiesPage() {
       </section>
     </div>
   );
-}
+};
+
+export default CaseStudiesPage;

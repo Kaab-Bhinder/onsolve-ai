@@ -133,7 +133,7 @@ export default function Hero() {
         </p>
 
         <div className="flex justify-start items-center w-full">
-          <Link href="#consultation" className="w-full sm:w-auto">
+          <Link href="/contact#consultation-form" className="w-full sm:w-auto">
             <button
               ref={buttonRef}
               className="group flex items-center justify-center gap-2 px-4 sm:px-6 md:px-8 py-3 sm:py-4 bg-accent text-white font-semibold sm:font-bold text-sm sm:text-base md:text-lg rounded-full hover:bg-accent/90 transition-colors duration-300 shadow-lg w-full sm:w-auto sm:min-w-[280px]"

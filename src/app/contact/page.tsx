@@ -1,9 +1,21 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaLinkedin, FaInstagram, FaYoutube, FaPhone, FaEnvelope, FaShareAlt, FaExternalLinkAlt, FaClock, FaUsers, FaHandshake, FaRocket } from "react-icons/fa";
 
 export default function ContactPage() {
+  useEffect(() => {
+    // Handle anchor scrolling after component mounts
+    if (window.location.hash) {
+      setTimeout(() => {
+        const element = document.querySelector(window.location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, []);
+
   return (
     <div>
       {/* Hero Section with contact.png background */}
@@ -219,16 +231,18 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Consultation Anchor Point */}
+      <div id="consultation-form" className="pt-20"></div>
+
       {/* Contact Form & Office Info */}
       <section className="py-20 px-4 md:px-16 lg:px-32 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           {/* Office Information */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0.3, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
             <div className="lg:sticky lg:top-8">
               <h2 className="text-4xl font-bold text-primary mb-6">Our Global Presence</h2>
@@ -266,10 +280,9 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0.3, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
           >
             <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100">
               <div className="text-center mb-8">

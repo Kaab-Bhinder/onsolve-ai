@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from "react";
+import { faqData } from '@/assets/data';
 
 type FAQItemProps = {
   question: string;
@@ -32,29 +33,6 @@ function FAQItem({ question, answer }: FAQItemProps) {
   );
 }
 
-const faqs = [
-  {
-    question: "How do Omnisolve AI Agents actually work?",
-    answer:
-      "Omnisolve AI Agents use advanced algorithms to automate tasks, interact with users, and integrate seamlessly with your business systems for real results."
-  },
-  {
-    question: "How secure is your automation platform?",
-    answer:
-      "Our platform uses enterprise-grade security protocols, data encryption, and regular audits to ensure your information is protected."
-  },
-  {
-    question: "Can I integrate AI Agents with my existing systems?",
-    answer:
-      "Yes, our solution supports seamless integration with popular enterprise systems including HR, CRM, and ERP platforms."
-  },
-  {
-    question: "What support do you offer post-deployment?",
-    answer:
-      "We provide 24/7 support, onboarding, and ongoing optimization to ensure your AI Agents deliver maximum value."
-  }
-];
-
 export default function ModernizedFAQ() {
   return (
     <section
@@ -64,8 +42,8 @@ export default function ModernizedFAQ() {
       <div className="absolute inset-0 bg-bg/80 pointer-events-none" />
       <h2 className="relative z-10 text-4xl md:text-5xl font-bold text-vlightbg font-poppins mb-10 text-center drop-shadow">Frequently Asked Questions</h2>
       <div className="relative z-10 w-full max-w-3xl mx-auto flex flex-col gap-6">
-        {faqs.map((faq, idx) => (
-          <FAQItem key={idx} question={faq.question} answer={faq.answer} />
+        {faqData.map((faq, idx) => (
+          <FAQItem key={faq.id || idx} question={faq.question} answer={faq.answer} />
         ))}
       </div>
     </section>

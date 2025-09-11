@@ -396,7 +396,7 @@ export default function AboutPage() {
               Ready to transform your business with AI? Our team is here to help you navigate the possibilities and create solutions that drive real results.
             </p>
             
-            <Link href="/contact">
+            <Link href="/contact#consultation-form">
               <motion.button
                 className="bg-accent text-white px-12 py-4 rounded-xl font-semibold text-lg shadow-lg hover:bg-accent/90 hover:shadow-xl transition-all duration-300 inline-flex items-center gap-3"
                 whileHover={{ scale: 1.05, y: -2 }}

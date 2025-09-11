@@ -3,63 +3,12 @@ import React from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { testimonials } from '@/assets/data';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
-// Dummy testimonials data
-const testimonials = [
-  {
-    id: 1,
-    name: "Alexandra Chen",
-    role: "Chief Technology Officer",
-    company: "InnovateTech Solutions",
-    text: "Omnisolve AI completely revolutionized our development process. Their AI agents reduced our deployment time by 70% and improved our code quality significantly.",
-    image: "/testimonials/client1.jpg"
-  },
-  {
-    id: 2,
-    name: "Marcus Rodriguez",
-    role: "VP of Operations",
-    company: "HealthFlow Medical",
-    text: "The healthcare AI solutions provided by Omnisolve transformed patient care in our facilities. We've seen a 45% improvement in diagnostic accuracy and faster treatment decisions.",
-    image: "/testimonials/client2.jpg"
-  },
-  {
-    id: 3,
-    name: "Sarah Williams",
-    role: "Head of Digital Marketing",
-    company: "RetailGenius Corp",
-    text: "Their Try-On AI technology boosted our online sales by 85%. Customer engagement increased dramatically, and returns decreased by 60%. Absolutely game-changing!",
-    image: "/testimonials/client3.jpg"
-  },
-  {
-    id: 4,
-    name: "David Gonzalez",
-    role: "Learning & Development Director",
-    company: "EduTech Innovations",
-    text: "The AI-powered training solutions streamlined our entire onboarding process. New employees are now 3x more productive in their first month. Outstanding results!",
-    image: "/testimonials/client4.jpg"
-  },
-  {
-    id: 5,
-    name: "Emily Johnson",
-    role: "Chief Executive Officer",
-    company: "FinanceFirst Bank",
-    text: "Omnisolve AI's business automation solutions helped us process transactions 5x faster while maintaining the highest security standards. Their team is exceptional.",
-    image: "/testimonials/client5.jpg"
-  },
-  {
-    id: 6,
-    name: "James Thompson",
-    role: "Product Manager",
-    company: "CloudScale Systems",
-    text: "Working with Omnisolve was a transformative experience. Their AI consulting helped us identify new opportunities and optimize our product development cycle.",
-    image: "/testimonials/client6.jpg"
-  }
-];
 
 export default function TestimonialSlider() {
   return (

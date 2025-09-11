@@ -53,18 +53,6 @@ export default function Header() {
               </li>
               <li>
                 <Link 
-                  href="/solutions" 
-                  className={`transition-all duration-300 ${
-                    isActive('/solutions') 
-                      ? 'text-accent underline underline-offset-4 decoration-2 decoration-accent font-semibold' 
-                      : 'text-text-primary hover:text-accent hover:underline underline-offset-4 decoration-2 decoration-accent'
-                  }`}
-                >
-                  Solutions
-                </Link>
-              </li>
-              <li>
-                <Link 
                   href="/services" 
                   className={`transition-all duration-300 ${
                     isActive('/services') 
@@ -73,6 +61,18 @@ export default function Header() {
                   }`}
                 >
                   Services
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/case-studies" 
+                  className={`transition-all duration-300 ${
+                    isActive('/case-studies') 
+                      ? 'text-accent underline underline-offset-4 decoration-2 decoration-accent font-semibold' 
+                      : 'text-text-primary hover:text-accent hover:underline underline-offset-4 decoration-2 decoration-accent'
+                  }`}
+                >
+                  Case Studies
                 </Link>
               </li>
               <li>
@@ -102,7 +102,7 @@ export default function Header() {
             </ul>
             
             {/* CTA Button */}
-            <Link href="#consultation">
+            <Link href="/contact#consultation-form">
               <button className="flex items-center gap-1 px-3 md:px-4 lg:px-5 py-2 md:py-2.5 lg:py-3 bg-accent text-white font-medium md:font-semibold text-xs md:text-sm lg:text-base rounded-md lg:rounded-lg hover:bg-accent/90 transition-all duration-200 shadow-sm md:shadow-md hover:shadow-lg border border-accent">
                 Book a Consultation
                 <HiArrowRight className="w-3 h-3 md:w-4 md:h-4" />
@@ -181,19 +181,6 @@ export default function Header() {
                 </li>
                 <li>
                   <Link 
-                    href="/solutions" 
-                    className={`block transition-all duration-300 ${
-                      isActive('/solutions') 
-                        ? 'text-accent underline underline-offset-4 decoration-2 decoration-accent font-semibold' 
-                        : 'text-text-primary hover:text-accent hover:underline underline-offset-4 decoration-2 decoration-accent'
-                    }`}
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    Solutions
-                  </Link>
-                </li>
-                <li>
-                  <Link 
                     href="/services" 
                     className={`block transition-all duration-300 ${
                       isActive('/services') 
@@ -203,6 +190,19 @@ export default function Header() {
                     onClick={() => setMenuOpen(false)}
                   >
                     Services
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/case-studies" 
+                    className={`block transition-all duration-300 ${
+                      isActive('/case-studies') 
+                        ? 'text-accent underline underline-offset-4 decoration-2 decoration-accent font-semibold' 
+                        : 'text-text-primary hover:text-accent hover:underline underline-offset-4 decoration-2 decoration-accent'
+                    }`}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Case Studies
                   </Link>
                 </li>
                 <li>
@@ -235,7 +235,7 @@ export default function Header() {
               
               {/* Mobile CTA */}
               <div className="mt-8">
-                <Link href="#consultation">
+                <Link href="/contact#consultation-form">
                   <button 
                     className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-accent text-white font-medium text-sm rounded-lg hover:bg-accent/90 transition-all duration-200 shadow-md border border-accent"
                     onClick={() => setMenuOpen(false)}

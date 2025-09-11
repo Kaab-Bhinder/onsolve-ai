@@ -17,97 +17,27 @@ import {
 } from "react-icons/fa";
 import TestimonialSlider from "@/Components/TestimonialSlider";
 import CallToAction from "@/Components/CallToAction";
+import { detailedServicesData } from '@/assets/data';
 
 export default function ServicesPage() {
   const [activeService, setActiveService] = useState<string | null>(null);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   
-  const services = [
-    {
-      id: "ai-agents",
-      icon: "🤖",
-      reactIcon: FaRocket,
-      title: "AI Agents",
-      description: "Automating 24/7 support and sales workflows with intelligent virtual assistants that scale your business operations and enhance customer experience.",
-      badge: "Most Popular",
-      stats: ["90% faster response", "24/7 availability", "Multi-language support"],
-      detailedDescription: [
-        "Transform your customer service with intelligent AI agents that work around the clock. Our advanced conversational AI understands context, learns from interactions, and provides personalized responses that feel genuinely human.",
-        "From lead qualification to complex support queries, our AI agents integrate seamlessly with your existing systems. They can handle multiple languages, escalate complex issues appropriately, and maintain detailed interaction histories for improved service quality.",
-        "Experience significant cost savings while improving customer satisfaction scores. Our AI agents reduce response times by up to 90% and can handle thousands of simultaneous conversations without compromising quality."
-      ]
-    },
-    {
-      id: "business-automation",
-      icon: "⚙️",
-      reactIcon: FaCogs,
-      title: "Business Automation",
-      description: "Streamline HR, CRM, and finance processes to reduce manual work, increase operational efficiency, and eliminate repetitive tasks across your organization.",
-      badge: "High Impact",
-      stats: ["60% time savings", "99.9% accuracy", "Easy integration"],
-      detailedDescription: [
-        "Eliminate time-consuming manual processes with intelligent automation solutions. Our systems can handle everything from invoice processing and data entry to complex workflow orchestration across multiple departments.",
-        "Integrate disparate business systems into cohesive workflows that reduce errors and improve efficiency. We specialize in connecting CRM, ERP, accounting, and HR systems to create seamless data flow and automated decision-making.",
-        "Achieve measurable ROI through reduced operational costs and improved accuracy. Our automation solutions typically deliver 40-60% time savings on routine tasks while virtually eliminating human error in data processing."
-      ]
-    },
-    {
-      id: "predictive-analytics",
-      icon: "📊",
-      reactIcon: FaChartLine,
-      title: "Predictive Analytics",
-      description: "Data-driven insights for smarter decisions using advanced machine learning and statistical analysis to forecast trends and optimize performance.",
-      badge: "Smart Insights",
-      stats: ["95% accuracy", "Real-time data", "Easy setup"],
-      detailedDescription: [
-        "Unlock the power of your data with advanced predictive modeling that reveals hidden patterns and future trends. Our machine learning algorithms analyze historical data to provide accurate forecasts for sales, demand, customer behavior, and market conditions.",
-        "Make informed strategic decisions with real-time dashboards and automated reporting systems. Our analytics platforms integrate with your existing data sources to provide comprehensive insights without disrupting your current workflows.",
-        "Gain competitive advantages through predictive maintenance, inventory optimization, and customer churn prevention. Our solutions help you anticipate problems before they occur and capitalize on opportunities before your competitors."
-      ]
-    },
-    {
-      id: "web-development",
-      icon: "💻",
-      reactIcon: FaCode,
-      title: "Web Development",
-      description: "Modern, scalable websites and applications built with cutting-edge technologies, responsive design, and optimized for performance and SEO.",
-      badge: "Full Stack",
-      stats: ["100% responsive", "SEO optimized", "Modern tech"],
-      detailedDescription: [
-        "Create stunning digital experiences with our full-stack web development services. We build responsive, lightning-fast websites using modern frameworks like React, Next.js, and Vue.js, ensuring your online presence performs flawlessly across all devices.",
-        "From e-commerce platforms to complex web applications, we deliver scalable solutions that grow with your business. Our development process includes comprehensive testing, security implementation, and performance optimization to ensure maximum uptime and user satisfaction.",
-        "Boost your online visibility with SEO-optimized development practices and integrated analytics. Our websites are built for search engine success while maintaining exceptional user experience and conversion optimization."
-      ]
-    },
-    {
-      id: "mobile-apps",
-      icon: "📱",
-      reactIcon: FaMobile,
-      title: "Mobile Apps",
-      description: "Cross-platform iOS and Android applications that deliver exceptional user experiences, seamless functionality, and robust performance across devices.",
-      badge: "Cross Platform",
-      stats: ["iOS & Android", "App Store ready", "Fast delivery"],
-      detailedDescription: [
-        "Reach your customers wherever they are with native and cross-platform mobile applications. Our development team creates intuitive, feature-rich apps that leverage device capabilities while maintaining consistent performance across iOS and Android platforms.",
-        "Integrate advanced features like push notifications, offline functionality, real-time synchronization, and AI-powered personalization. Our apps are designed to engage users and drive business results through thoughtful UX design and robust backend integration.",
-        "Launch faster and maintain easier with our cross-platform development approach using React Native and Flutter. This strategy reduces development time by up to 50% while ensuring native-level performance and user experience."
-      ]
-    },
-    {
-      id: "cloud-devops",
-      icon: "☁️",
-      reactIcon: FaCloud,
-      title: "Cloud & DevOps",
-      description: "Reliable deployment and infrastructure scaling with automated CI/CD pipelines, cloud optimization, and enterprise-grade security implementations.",
-      badge: "Scalable",
-      stats: ["99.9% uptime", "Auto-scaling", "Secure by default"],
-      detailedDescription: [
-        "Modernize your infrastructure with cloud-native solutions that scale automatically based on demand. We specialize in AWS, Azure, and Google Cloud implementations that reduce costs while improving performance and reliability.",
-        "Accelerate your development cycle with automated CI/CD pipelines, containerization, and infrastructure as code. Our DevOps practices reduce deployment time from hours to minutes while minimizing the risk of production issues.",
-        "Ensure enterprise-level security and compliance with our comprehensive approach to cloud security, monitoring, and disaster recovery. We implement best practices for data protection, access control, and system resilience."
-      ]
-    }
-  ];
+  // Icon mapping
+  const iconMapping = {
+    FaRocket,
+    FaCogs,
+    FaChartLine,
+    FaCode,
+    FaMobile,
+    FaCloud
+  };
+  
+  // Add reactIcon property to services data
+  const services = detailedServicesData.map(service => ({
+    ...service,
+    reactIcon: iconMapping[service.iconName as keyof typeof iconMapping]
+  }));
 
   const whyChooseUs = [
     {
@@ -207,7 +137,7 @@ export default function ServicesPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
-            <Link href="#services-grid">
+            <Link href="/contact#consultation-form">
               <motion.button 
                 className="bg-white text-primary px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg"
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -316,14 +246,16 @@ export default function ServicesPage() {
                     ))}
                   </div>
                   
-                  <motion.button 
-                    className="w-full bg-gradient-to-r from-accent to-accent/90 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <span>Book a Consultation</span>
-                    <HiArrowRight className="w-4 h-4" />
-                  </motion.button>
+                  <Link href="/contact#consultation-form">
+                    <motion.button 
+                      className="w-full bg-gradient-to-r from-accent to-accent/90 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <span>Book a Consultation</span>
+                      <HiArrowRight className="w-4 h-4" />
+                    </motion.button>
+                  </Link>
                 </div>
 
                 {/* Floating Icon Animation */}

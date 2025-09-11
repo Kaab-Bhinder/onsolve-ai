@@ -45,7 +45,7 @@ export default function CallToAction() {
             viewport={{ once: true }}
           >
             <Link 
-              href="/contact"
+              href="/contact#consultation-form"
               className="inline-block"
             >
               <motion.button
